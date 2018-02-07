@@ -1,0 +1,61 @@
+<%- include('header') -%>
+    <%- include('nav') -%>
+        <aside class="right-side">
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel">
+                            <header class="panel-heading">
+                                <a href="/admin/addArticle">添加文章</a>
+                            </header>
+                            <div class="panel-body table-responsive">
+                                <div class="box-tools m-b-15">
+                                    <div class="input-group">
+                                        <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-default">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <th>标题</th>
+                                            <th>分类</th>
+                                            <th>作者</th>
+                                            <th>修改时间</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        <% if (!art || art.length==0) {%>
+                                        <tr>
+                                            <td colspan="5">该分类下暂时木有数据哦，
+                                                <a href="/admin/addArticle">添加一条？</a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                        <% for(var i = 0;i < art.length;i++){ %>
+                                        <tr>
+                                            <td><%= art[i].title%></td>
+                                            <td><a href="/admin/articleList?type=<%= art[i].type._id%>"><%= art[i].type.typename%></a></td>
+                                            <td><%= art[i].author%></td>
+                                            <td><%= art[i].updatetime%></td>
+                                            <td><a href="/admin/editArticle?_id=<%= art[i]._id%>" class="btn btn-primary">修改</a>
+                                                <a href="/admin/deleteArticle?_id=<%= art[i]._id%>" class="btn btn-primary">删除</a></td>
+                                        </tr>
+                                        
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </aside>
+        <%- include('footer') -%>

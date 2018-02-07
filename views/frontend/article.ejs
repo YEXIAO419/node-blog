@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>博客首页</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/js/highlight/styles/idea.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="/public/js/html5shiv.min.js"></script>
+    <script src="/public/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container header">
+        <div class="navbar-collapse  mt10" id="bs-example-navbar-collapse-1">
+            <a class="navbar-brand" href="/"><img src="/img/logo.png"/></a>
+            <a href="/login" class="login-link">登陆</a>
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#example-navbar-collapse">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="nav-main">
+                    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                        <div class="nav-text">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/feelings?type=5a4b4bc8cc57f446404f6803">情感天地</a></li>
+                                <li class="active"><a>工作学习</a></li>
+                                <li><a href="/other?type=5a55e08401faaf4a6ab774bf">生活杂谈</a></li>
+                                <li><a href="/daily?type=5a4c84f6c5c90a4148ed958c">每日语录</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-24 col-sm-12 col-md-18">
+                    <div class="jumbotron">
+                        <h3>
+                            <%= art.title%>
+                        </h3>
+                        <hr>
+                        <p style="font-size: 10px">
+                            <span style="background:#393939; color:white;border-radius: 3px; padding: 3px 4px">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <span>
+                                    <%= art.author%>
+                                </span>
+                            </span>&nbsp;
+                            <span style="background:#FFC219; color:white;border-radius: 3px; padding: 3px 4px">
+                                <span class="glyphicon glyphicon-time"> </span>
+                                <span>
+                                    <%= art.updatetime%>
+                                </span>
+                            </span>&nbsp;
+                            <span style="background:#E32551; color:white;border-radius: 3px; padding: 3px 4px">
+                                <span class="glyphicon glyphicon-eye-open"> </span>
+                                <span>(
+                                    <%= art.read%>)</span>
+                            </span>&nbsp;
+                            <span style="background:#73C8A9; color:white;border-radius: 3px; padding: 3px 4px">
+                                <span class="glyphicon glyphicon-comment"> </span>
+                                <span>(
+                                    <%= art.support%>)</span>
+                            </span>
+                        </p>
+                        <%= art.content%>
+                    </div>
+                    <div class="jumbotron">
+                        <div class="comment">
+                            <div class="row">
+                                <div class="col-xs-6">评论</div>
+                                <div class="totalCount col-xs-6" style="text-align: right">快来评论一下</div>
+                            </div>
+                            <div><%= username %></div>
+                            <textarea rows="3" class="form-control" placeholder="请输入评论" id="messageContent"></textarea>
+                            <input type="hidden" id="contentId" value="<%= art._id %>">
+                            <p>
+                                <button class="btn btn-primary btn-sm" role="button" id="messageBtn">提交</button>
+                            </p>
+                        </div>
+                        <div id="commentList">
+                            
+                        </div>
+                        <nav aria-label="Page navigation" class="page">
+                            <ul class="pagination">
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <%- include('footer') -%>
+<script type="text/javascript">
+    $(function(){
+        loadCommentList();
+    })
+</script>
+</body>
+
+</html>

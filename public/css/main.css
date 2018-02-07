@@ -1,0 +1,99 @@
+/******************************** index *********************************/
+.header {
+    position: relative;
+}
+.index-bg {
+    width: 1140px;
+    height: 265px;
+    background-image: url(../img/banner.png);
+    background-repeat: no-repeat;
+    background-position: 15px 0;
+}
+.index-bg h2{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 120px;
+}
+
+.index-bg span{
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.nav-main {
+    position: relative;
+}
+
+.nav-text {
+    margin: 37px 0 0 80px;
+    font-weight: bold;
+}
+
+.nav-text li{
+    padding: 0 10px;
+}
+
+.container .navbar-toggle {
+    margin-top: 37px;
+}
+
+.nav-main .navbar-form {
+    padding-top: 37px;
+}
+
+.login-link {
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+
+.search-form {
+    margin-bottom: 20px;
+}
+
+.footer.navbar {
+    margin-bottom: 0;
+    text-align: center;
+    line-height: 50px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.container .jumbotron {
+    padding: 10px;
+    background-color: #f6f6f6;
+}
+
+.jumbotron #commentList {
+    font-size: 12px;
+}
+
+#commentList .panel-body {
+    padding: 5px 10px;
+}
+
+.comment {
+    font-size: 14px;
+}
+
+.comment .totalCount {
+    font-weight: bold;
+}
+
+.comment p {
+    margin-top: 10px;
+}
+
+#commentList .panel { margin-bottom: 5px; }
+
+.container .page { text-align: right; }
+
+.container .pagination { margin-bottom: 0; }
+
+.container .pagination > li > a,.container .pagination > li > span {
+    padding: 1px 12px;
+}

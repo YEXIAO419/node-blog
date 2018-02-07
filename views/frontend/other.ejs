@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>xiaoxiao专属空间</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/js/highlight/styles/idea.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="/public/js/html5shiv.min.js"></script>
+    <script src="/public/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container header">
+        <div class="navbar-collapse  mt10" id="bs-example-navbar-collapse-1">
+            <a class="navbar-brand" href="/"><img src="/img/logo.png"/></a>
+            <a href="/login" class="login-link">登陆</a>
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#example-navbar-collapse">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="nav-main">
+                    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                        <div class="nav-text">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/feelings?type=5a4b4bc8cc57f446404f6803">情感天地</a></li>
+                                <li><a href="/work?type=5a4b4be4cc57f446404f6804">工作学习</a></li>
+                                <li class="active"><a>生活杂谈</a></li>
+                                <li><a href="/daily?type=5a4c84f6c5c90a4148ed958c">每日语录</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <form class="bs-example bs-example-form search-form" role="form">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="请输入关键字">
+                            <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">查询</button>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-24 col-sm-12 col-md-18">
+            <% for(var i = 0;i < art.length;i++){%>
+            <div class="jumbotron">
+                <h3><a href="/detail?_id=<%= art[i]._id %>"><%= art[i].title%></a>
+                    <span style="float: right; font-size: 10px;background:#888; color:white;border-radius: 3px; padding: 3px 4px"><span class="glyphicon glyphicon-user"></span><span><%= art[i].author%></span></span>&nbsp;
+                </h3>
+                <h4><%= art[i].content%></h4>
+                <p style="font-size: 10px; text-align: right;">
+                    <span style="color: #666;border-radius: 3px; padding: 3px 4px"><span class="glyphicon glyphicon-time"> </span><span><%= art[i].createtime %></span></span>&nbsp;
+                    <span style="background:#E32551; color:white;border-radius: 3px; padding: 3px 4px"><span class="glyphicon glyphicon-eye-open"> </span><span> <%= art[i].read%></span></span>&nbsp;
+                    <span style="background:#73C8A9; color:white;border-radius: 3px; padding: 3px 4px"><span class="glyphicon glyphicon-comment"> </span><span> <%= art[i].support%></span></span>
+                </p>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+<%- include('footer') -%>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<%- include('header') -%>
+    <%- include('nav') -%>
+        <aside class="right-side">
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel">
+                            <header class="panel-heading">
+                                <a href="/admin/addType">添加分类</a>
+                                <a href="javascript:void(0);">删除文章</a>
+                            </header>
+                            <div class="panel-body table-responsive">
+                                <div class="box-tools m-b-15">
+                                    <div class="input-group">
+                                        <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-default">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <th>分类名称</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        <% for(var i = 0;i < arcType.length;i++){ %>
+                                        <tr>
+                                            <td><a href="/admin/articleList?type=<%= arcType[i]._id%>"><%= arcType[i].typename%></td>
+                                            <td><a href="javascript:void(0);">删除</a>
+                                                <a href="javascript:void(0);">修改</a>
+                                            </td>
+                                        </tr>
+                                        
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </aside>
+        <%- include('footer') -%>

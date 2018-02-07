@@ -1,0 +1,128 @@
+body {
+    background: #2e2e36;
+}
+div, ul, li, a {
+    margin: 0 auto;
+    padding: 0px;
+}
+.gray{
+    color:#9a9a9a;
+}
+.orange{
+    color:#ff5c38;
+}
+.mt30{
+    margin-top: 30px;
+}
+.tc{
+    text-align: center;
+}
+.tr{
+    text-align: right;
+}
+.box{
+	width:500px;
+	padding-bottom:50px;
+	margin-top:10%;
+	background:#303038;
+	border-radius:5px;
+	border:1px solid #37373f;
+	box-shadow: 5px 2px 12px #37373f;
+}
+.title{
+	font-size:24px;
+	text-align:center;
+	color:#ff5c38;
+	line-height:50px;
+	border-bottom: 1px solid #3b3b45;
+}
+.form .line{
+	width:410px;
+	line-height:46px;
+}
+.form .txt{
+	padding:0px 8px 0px 50px;
+	width:350px;
+	height:46px;
+	line-height:46px;
+	border-radius:2px;
+	display:block;
+	margin-top:30px;
+	background-color:#3b3b45;
+	background-repeat:no-repeat;
+	background-position:10px 8px;
+	border:1px solid #44444f;
+	color:#eee;
+	font-size:16px;
+}
+.form .txt:focus{
+	transition: all .3s;
+	outline: none;
+	background-color: #464650;
+}
+.form .short-txt{
+	width:230px;
+}
+.form .phone{
+	background-image:url(../images/username.png);
+}
+.form .password{
+	background-image:url(../images/password.png);
+}
+.form .checkcode-txt{
+	background-image:url(../images/checkcode.png);
+	float: left;
+}
+.form .checkcode-img{
+	width:90px;
+	height: 32px;
+	border: 7px solid #3b3b45;
+	float: right;
+	margin-top: 30px;
+	border-radius: 5px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.form .btn{
+	width:410px;
+	height:46px;
+	line-height:46px;
+	background:#515161;
+	margin-top:20px;
+	cursor:pointer;
+	font-size:20px;
+	font-weight:bold;
+	border:0px;
+	color:#ff5c38;
+	border: 1px solid #666679;
+}
+.form .btn:hover{
+	background:#616173;
+
+}
+.show-tips{
+	position:fixed;
+	left:50%;
+	top:5%;
+	margin-left:-100px;
+	z-index:1;
+}
+.show-tips span{
+	color:#fff;
+	padding:0px 25px;
+	line-height:48px;
+	display:inline-block;
+	border-radius:2px;
+	font-size:26px;
+}
+.show-tips div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	background:#f90;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	z-index:-1;
+}
